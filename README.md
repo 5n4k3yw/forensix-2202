@@ -58,19 +58,19 @@ runner.ps1 will run the other three powershell scripts concurrently.
 6. Remove the Bash Bunny and toggle its switch position to the “middle” position.
     - Sets the Bash Bunny into attacking mode to execute the files that are instructed to.
 7. Plug into target’s workstation to begin digital artifacts extraction.
-8. After the extraction is completed, the contents of the Bash Bunny will popped up in a File Explorer Window
-9. Extracted information are found in the *loot* folder
+8. After the extraction is completed, the contents of the Bash Bunny will popped up in a File Explorer Window.
+9. Extracted information are found in the *loot* folder.
 
 ## Exfiltration & Timeline Analysis
 1. Copy the *loot* folder from Bash Bunny to your local workstation.
 2. Download this repository as a ZIP file and after downloading, extract the contents.
-3. Go to the directory that contains ***projectGUI.py*** script file
-4. Use Command Prompt / Powershell to execute the script 
+3. Go to the directory that contains ***projectGUI.py*** script file.
+4. Use Command Prompt / Powershell to execute the script:
     > python / python3 .\projectGUI.py
 5. Select the *loot* folder when prompted.
-6. Python Flask will be started and a browser will pop up showing our website (tool)
+6. Python Flask will be started and a browser will pop up showing our website (tool).
 7. Click on the ***red icon*** to view our textual analysis on the user's activities. 
-8. Head back to the main page of website & click on the **green icon** to view the timeline analysis on the user's browsing history. 
+8. Head back to the main page of website & click on the ***green icon*** to view the timeline analysis on the user's browsing history. 
 ```
 There are 3 colours in this graph: Blue, Green, Red.
 Blue - Indicates that the url is harmless and the user is unlikely to have any malicious intent
