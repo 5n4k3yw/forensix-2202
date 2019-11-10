@@ -71,10 +71,10 @@ runner.ps1 will run the other three powershell scripts concurrently.
 6. Click on the ***red icon*** to view our textual analysis on the user's activities. 
 7. Head back to the main page of website & click on the **green icon** to view the timeline analysis on the user's browsing history. 
 ```
-There are 3 colours in this graph: Green, Red, Blue.
-Green - Indicating that the url is normal/does not indicate any malcious intent
-Blue - Indicating that the url is harmless and unlikely to demonstrate any malicious intent
-Red - Indicating that the url is bad and that the user may be visiting the website to conduct malicious intent
+There are 3 colours in this graph: Blue, Green, Red.
+Blue - Indicates that the url is harmless and the user is unlikely to have any malicious intent
+Green - Indicates that the url is neutral
+Red - Indicates that the url is bad and that the user may be visiting the website with malicious intent
 ```
 ## Machine Learning
 __Machine Learning does not state anything, it only provides an indication__
