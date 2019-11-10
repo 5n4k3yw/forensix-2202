@@ -1,0 +1,18 @@
+<html>
+   <body>
+      <h1>Potential Maliciousness: {{ sentiment }}%</h1>
+      <p>We have processed <b>{{ counter }}</b> web page titles and file names</p>
+      <br><br>
+      <h2>Top 50 web pages/file names flagged out:</h2>
+
+      <table border='1', style='border-collapse:collapse'>
+         
+      {% for x in badlist[:50] %}
+      <tr></tr>
+         <td>{{ x[0] }}</td>
+      </tr>
+         {% endfor %}
+   </table>
+
+   </body>
+</html>
