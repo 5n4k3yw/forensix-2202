@@ -77,7 +77,7 @@ Blue - Indicating that the url is harmless and unlikely to demonstrate any malic
 Red - Indicating that the url is bad and that the user may be visiting the website to conduct malicious intent
 ```
 ## Machine Learning
-__Machine Learning does not state anything, it onl provides an indication__
+__Machine Learning does not state anything, it only provides an indication__
 
 You can click on the ***orange icon*** on the website to access the Machine Learning portion
 ###### Re-training model with new data
