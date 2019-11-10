@@ -19,7 +19,7 @@ np.random.seed(500)
 
 
 #get training data from reading from csv
-#do remember to change to the path that contains all of the information after going through textual analysis
+#do remember to change to the path of the csv that contains all of the information after going through textual analysis
 testing_corpus = pd.read_csv("analysisoutput.csv",encoding='latin-1')#testing data
 print("Read CSV file to be tested.... \n")
 # Step 1 of Data Preprocessing : 
