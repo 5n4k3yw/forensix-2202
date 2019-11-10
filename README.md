@@ -46,16 +46,16 @@ You need to download Neo4J Desktop Application [at this link](https://neo4j.com/
 
 ## Extraction of information using Bash Bunny
 1. Toggle the Bash Bunny’s switch position to the “lowest” position.
-2. Sets the Bash Bunny into storage mode for uploading of files.
-3. Navigate to the “Bash Bunny Drive” > “payload” > “switch2” directory.
+    - Sets the Bash Bunny into storage mode for uploading of files.
+2. Navigate to the “Bash Bunny Drive” > “payload” > “switch2” directory.
     - This is the directory to upload all the powershell scripts.
-5. Download the Powershell scripts from *switch2* folder from this repository
+5. Download the Powershell scripts from *switch2* folder from [this repository]()
 6. Upload “runner.ps1”, “Browser-Extraction.ps1”, “Registry-Extraction” and “File-Extraction.ps1” to the current directory of Bash Bunny.
 runner.ps1 will run the other three powershell scripts concurrently.
-7. Open “payload.txt” and include this line “RUN WIN Powershell -nop -ex Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\runner.ps1')"” right after “# Run the run.ps1 script in the BashBunny”.
-8. Instructs the Bash Bunny to run powershell with “Bypass” policy so that powershell scripts can be executed on the workstation.
+    - Open “payload.txt” and include this line “RUN WIN Powershell -nop -ex Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\runner.ps1')"” right after “# Run the run.ps1 script in the BashBunny”.
+    - Instructs the Bash Bunny to run powershell with “Bypass” policy so that powershell scripts can be executed on the workstation.
 9. runner.ps1 is to be executed when Bash Bunny is plugged into the device.
-10. Remove the Bash Bunny and toggle its switch position to the “middle” position.
+    - Remove the Bash Bunny and toggle its switch position to the “middle” position.
 11. Sets the Bash Bunny into attacking mode to execute the files that are instructed to.
 12. Plug into target’s workstation to begin digital artifacts extraction.
 13. After the extraction is completed, the contents of the Bash Bunny will popped up in a File Explorer Window
