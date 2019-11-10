@@ -49,7 +49,7 @@ You need to download Neo4J Desktop Application [at this link](https://neo4j.com/
     - Sets the Bash Bunny into storage mode for uploading of files.
 2. Navigate to the “Bash Bunny Drive” > “payload” > “switch2” directory.
     - This is the directory to upload all the powershell scripts.
-5. Download the Powershell scripts from *switch2* folder from [this repository]()
+5. Download the Powershell scripts from *switch2* folder from [this repository](https://github.com/wanitaqing/forensix-2202)
 6. Upload “runner.ps1”, “Browser-Extraction.ps1”, “Registry-Extraction” and “File-Extraction.ps1” to the current directory of Bash Bunny.
 runner.ps1 will run the other three powershell scripts concurrently.
     - Open “payload.txt” and include this line “RUN WIN Powershell -nop -ex Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\runner.ps1')"” right after “# Run the run.ps1 script in the BashBunny”.
