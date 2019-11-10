@@ -49,16 +49,17 @@ You need to download Neo4J Desktop Application [at this link](https://neo4j.com/
 2. Sets the Bash Bunny into storage mode for uploading of files.
 3. Navigate to the “Bash Bunny Drive” > “payload” > “switch2” directory.
     - This is the directory to upload all the powershell scripts.
-4. Upload “runner.ps1”, “Browser-Extraction.ps1”, “Registry-Extraction” and “File-Extraction.ps1” to the current directory.
+5. Download the Powershell scripts from *Bash Bunny Scripts* folder from this repository
+6. Upload “runner.ps1”, “Browser-Extraction.ps1”, “Registry-Extraction” and “File-Extraction.ps1” to the current directory of Bash Bunny.
 runner.ps1 will run the other three powershell scripts concurrently.
-5. Open “payload.txt” and include this line “RUN WIN Powershell -nop -ex Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\runner.ps1')"” right after “# Run the run.ps1 script in the BashBunny”.
-6. Instructs the Bash Bunny to run powershell with “Bypass” policy so that powershell scripts can be executed on the workstation.
-7. runner.ps1 is to be executed when Bash Bunny is plugged into the device.
-8. Remove the Bash Bunny and toggle its switch position to the “middle” position.
-9. Sets the Bash Bunny into attacking mode to execute the files that are instructed to.
-10. Plug into target’s workstation to begin digital artifacts extraction.
-11. After the extraction is completed, the contents of the Bash Bunny will popped up in a File Explorer Window
-12. Extracted information are found in the *loot* folder
+7. Open “payload.txt” and include this line “RUN WIN Powershell -nop -ex Bypass ".((gwmi win32_volume -f 'label=''BashBunny''').Name+'payloads\\$SWITCH_POSITION\runner.ps1')"” right after “# Run the run.ps1 script in the BashBunny”.
+8. Instructs the Bash Bunny to run powershell with “Bypass” policy so that powershell scripts can be executed on the workstation.
+9. runner.ps1 is to be executed when Bash Bunny is plugged into the device.
+10. Remove the Bash Bunny and toggle its switch position to the “middle” position.
+11. Sets the Bash Bunny into attacking mode to execute the files that are instructed to.
+12. Plug into target’s workstation to begin digital artifacts extraction.
+13. After the extraction is completed, the contents of the Bash Bunny will popped up in a File Explorer Window
+14. Extracted information are found in the *loot* folder
 
 ## Exfiltration & Timeline Analysis
 1. Copy the *loot* folder from Bash Bunny to your local workstation.
@@ -72,8 +73,27 @@ runner.ps1 will run the other three powershell scripts concurrently.
 ```
 There are 3 colours in this graph: Green, Red, Blue.
 Green - Indicating that the url is normal/does not indicate any malcious intent
-Blue - Indicating that the url is good and unlikely to demonstrate any malicious intent
+Blue - Indicating that the url is harmless and unlikely to demonstrate any malicious intent
 Red - Indicating that the url is bad and that the user may be visiting the website to conduct malicious intent
 ```
 ## Machine Learning
+__Machine Learning does not state anything, it onl provides an indication__
+
+You can click on the ***orange icon*** on the website to access the Machine Learning portion
 ###### Re-training model with new data
+1. If you would like to re-train the model with new data to improve its accuracy, remember to change the path of the file that is to be analyzed (in *ML_training_owndata.py ; line #23* )
+2. The new model & vectorizer will overwrite the old ones.
+
+###### Testing the model
+1. The model will be tested with the output from the textual analysis
+2. The script, that is ran in the background, will automatically get the output from textual analysis & use it as testing data.
+
+## Graphical Analysis
+1. Setup Neo4J Desktop
+2. All of the data that are being extracted and uploaded into Neo4J Database are located in folder *extracted_data*.
+3. If you wish to update the database with new information, you can execute the *userProfiling.py* script.
+4. You can access the Neo4J visualization by clicking on the ***blue icon*** on the website
+    - You may be prompted to key in the password, which can be found in one of the text files under the *projetGUI* folder of this repo. 
+5. After you are in, you can use cypher queries to understand relationships etc
+    - Cypher Queries work similarly to SQL queries
+    - E.g.  MATCH (u:User)-[r]-(b)-[r2]-(c) WHERE c.file_extension = '.py' OR c.url CONTAINS 'python' RETURN u,r,b,r2,c --> To view the python files and url links with the word python
